@@ -2,7 +2,7 @@
 
 This project is a **React JS temperature converter** that converts between Celsius and Fahrenheit and keeps a history of conversions.
 
-Live Demo: 
+Live Demo: https://task8-temperature-converter.vercel.app/
 
 ## Features
 
