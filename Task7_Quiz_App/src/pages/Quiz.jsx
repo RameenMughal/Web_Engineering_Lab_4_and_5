@@ -36,16 +36,15 @@ function Quiz() {
   const navigate = useNavigate();
 
   const handleNext = () => {
-    if (selected === questions[current].answer) {
-      setScore(score + 1);
-    }
+    const newScore = selected === questions[current].answer ? score + 1 : score;
+    setScore(newScore);
     setSelected("");
-
+    
     if (current < questions.length - 1) {
       setCurrent(current + 1);
     } else {
-      navigate("/result", { state: { score } });
-    }
+      navigate("/result", { state: { score: newScore } }); // pass newScore
+      }
   };
 
   const handlePrev = () => {
