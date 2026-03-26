@@ -2,7 +2,7 @@
 
 This project is a **React JS quiz application** with score tracking and navigation between questions.
 
-Live Demo: 
+Live Demo: https://task7-quiz-app.vercel.app/
 
 ## Features
 
