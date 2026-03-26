@@ -39,8 +39,8 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-8">
-      <h1 className="text-4xl font-bold mb-6">Temperature Converter</h1>
+    <div className="min-h-screen bg-pink-100 flex flex-col items-center p-8">
+      <h1 className="text-4xl font-bold italic mb-6">Temperature Converter</h1>
 
       <div className="bg-white p-6 rounded shadow w-full max-w-md space-y-6">
         <div className="flex justify-between items-center mb-4">
@@ -85,7 +85,7 @@ function App() {
 
         <button
           onClick={convert}
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+          className="w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700"
         >
           Convert
         </button>
@@ -101,7 +101,7 @@ function App() {
               <li
                 key={index}
                 className={`p-2 border rounded flex justify-between ${
-                  item.from === "C" ? "bg-blue-50" : "bg-green-50"
+                  item.from === "C" ? "bg-blue-50" : "bg-red-50"
                 }`}
               >
                 <span>
