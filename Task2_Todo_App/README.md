@@ -1,18 +1,12 @@
-# Simple React + Vite Todo App
+# React + Vite Todo App with Lucide Icons
 
-This is a **simple Todo app** built using **React** and **Vite** with **Tailwind CSS**.  
-It allows you to **add todos**, **mark them as done/undo**, **delete todos**, and comes with **default todos on page load**. You can also **press Enter to add a todo**.  
+This is a modern Todo app built using React, Vite, Tailwind CSS, and Lucide React icons.
+It allows you to add todos, add descriptions, mark them as done/undo, delete todos, and comes with default todos on page load. You can also press Enter to add a todo.
 
-**Live Demo:** [https://we-lab-task-2.vercel.app/](https://we-lab-task-2.vercel.app/)
-
----
+Live Demo: https://web-engineering-lab-4-and-5.vercel.app/
 
 ## Features
-
-- Add a todo via **input field** or **pressing Enter**.  
-- Mark todo as **Done** or **Undo**.  
-- Delete todos.  
-- Default todos appear on page reload.  
-- Minimal, clean UI using **Tailwind CSS**.  
-
-
+1. Add a todo via input field or pressing Enter.
+2. Add detailed descriptions for each todo.
+3. Mark todo as Done or Undo.
+4. Delete todos individually or clear all at once.
