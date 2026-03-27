@@ -3,7 +3,7 @@
 This is a modern Todo app built using React, Vite, Tailwind CSS, and Lucide React icons.
 It allows you to add todos, add descriptions, mark them as done/undo, delete todos, and comes with default todos on page load. You can also press Enter to add a todo.
 
-Live Demo: https://web-engineering-lab-4-and-5.vercel.app/
+Live Demo: https://task2-todo-app.vercel.app/
 
 ## Features
 1. Add a todo via input field or pressing Enter.
