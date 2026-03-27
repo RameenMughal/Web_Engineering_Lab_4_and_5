@@ -1,41 +1,9 @@
 # Student Marks Table with Sort & Filter
+This project is a React JS application that displays a student marks table with sorting and filtering functionality.
 
-This project is a **React JS application** that displays a **student marks table** with sorting and filtering functionality.
+Live Demo: https://task5studentmarkstable.vercel.app/
 
 ## Features
-
-* Display student marks in a table
-* Sort students by marks
-* Filter students by subject
-* Dynamic updates using React state
-
-## Tech Stack
-
-* React JS
-* Vite
-* Tailwind CSS
-* JavaScript (Hooks)
-
-## Live Demo
-
-https://we-lab-task-5.vercel.app/
-
-## Run Locally
-
-Install dependencies:
-
-```
-npm install
-```
-
-Run development server:
-
-```
-npm run dev
-```
-
-Build for production:
-
-```
-npm run build
-```
+1. Display student marks in a table
+2. Sort students by marks
+3. Filter students by subject
