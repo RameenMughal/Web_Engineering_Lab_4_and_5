@@ -1,13 +1,34 @@
-import React from 'react';
-import StudentForm from '../components/StudentForm';
+import StudentForm from "../components/StudentForm";
 
-const AddStudent = ({ onAddStudent }) => {
+function AddStudent({
+
+  addStudent,
+  showNotification
+
+}) {
+
   return (
-    <>
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">Add New Student</h1>
-      <StudentForm onAddStudent={onAddStudent} />
-    </>
+
+    <div>
+
+      <h2 className="heading">
+
+        Add Student
+
+      </h2>
+
+      <StudentForm
+
+        addStudent={addStudent}
+
+        showNotification={showNotification}
+
+      />
+
+    </div>
+
   );
-};
+
+}
 
 export default AddStudent;

@@ -1,38 +1,169 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import StudentList from './pages/StudentList';
-import AddStudent from './pages/AddStudent';
-import ProfileCards from './pages/ProfileCards';
+import { BrowserRouter, Routes, Route }
+from "react-router-dom";
+
+import { useState } from "react";
+
+import seedStudents from "./data/seedStudents";
+
+import Navigation from "./components/Navigation";
+
+import Dashboard from "./pages/Dashboard";
+
+import Students from "./pages/Students";
+
+import AddStudent from "./pages/AddStudent";
+
+import Profiles from "./pages/Profiles";
+
+import Notification from "./components/Notification";
+
 
 function App() {
-  const [students, setStudents] = useState([
-    { id: 1, name: 'Alice Johnson', email: 'alice@university.edu', course: 'Computer Science', attendance: 92 },
-    { id: 2, name: 'Bob Smith', email: 'bob@university.edu', course: 'Mathematics', attendance: 78 },
-    { id: 3, name: 'Carol White', email: 'carol@university.edu', course: 'Physics', attendance: 88 },
-    { id: 4, name: 'David Brown', email: 'david@university.edu', course: 'Engineering', attendance: 95 },
-  ]);
 
-  const addStudent = (newStudent) => {
-    setStudents((prev) => [
-      ...prev,
-      { ...newStudent, id: Date.now() },
-    ]);
-  };
+  const [students, setStudents]
+
+    = useState(seedStudents);
+
+
+  const [notification, setNotification]
+
+    = useState("");
+
+
+  function addStudent(student) {
+
+    setStudents(
+
+      [...students, student]
+
+    );
+
+  }
+
+
+  function deleteStudent(id) {
+
+    setStudents(
+
+      students.filter(
+
+        s => s.id !== id
+
+      )
+
+    );
+
+  }
+
+
+  function showNotification(msg) {
+
+    setNotification(msg);
+
+    setTimeout(() => {
+
+      setNotification("");
+
+    }, 2500);
+
+  }
+
 
   return (
-    <Router>
-      <Navbar />
-      <main className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+
+    <BrowserRouter>
+
+      <Navigation />
+
+      <Notification
+
+        message={notification}
+
+      />
+
+      <div className="p-5">
+
         <Routes>
-          <Route path="/" element={<Navigate to="/students" replace />} />
-          <Route path="/students" element={<StudentList students={students} />} />
-          <Route path="/add" element={<AddStudent onAddStudent={addStudent} />} />
-          <Route path="/profiles" element={<ProfileCards students={students} />} />
+
+          <Route
+
+            path="/"
+
+            element={
+
+              <Dashboard
+
+                students={students}
+
+              />
+
+            }
+
+          />
+
+
+          <Route
+
+            path="/students"
+
+            element={
+
+              <Students
+
+                students={students}
+
+                deleteStudent={deleteStudent}
+
+              />
+
+            }
+
+          />
+
+
+          <Route
+
+            path="/add"
+
+            element={
+
+              <AddStudent
+
+                addStudent={addStudent}
+
+                showNotification={showNotification}
+
+              />
+
+            }
+
+          />
+
+
+          <Route
+
+            path="/profiles"
+
+            element={
+
+              <Profiles
+
+                students={students}
+
+              />
+
+            }
+
+          />
+
         </Routes>
-      </main>
-    </Router>
+
+      </div>
+
+    </BrowserRouter>
+
   );
+
 }
 
 export default App;
