@@ -1,35 +1,45 @@
-function Products({ addToCart }) {
-  const products = [
-    { id: 1, name: "Laptop", price: 1200 },
-    { id: 2, name: "Smart Phone", price: 800 },
-    { id: 3, name: "Headphones", price: 150 },
-  ];
+import productsData from "../data/products";
+
+const Products = ({ addToCart, removeFromCart, cart }) => {
+  const getQuantity = (id) => {
+    const item = cart.find((p) => p.id === id);
+    return item ? item.quantity : 0;
+  };
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold mb-8">Products</h1>
-
-      <div className="grid md:grid-cols-3 gap-8">
-        {products.map((p) => (
+    <div className="p-6">
+      <h1 className="text-3xl font-bold mb-6 text-center text-purple-700">
+        Our Products
+      </h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {productsData.map((product) => (
           <div
-            key={p.id}
-            className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition"
+            key={product.id}
+            className="rounded-lg p-4 shadow-lg bg-gradient-to-tr from-pink-100 via-yellow-100 to-green-100 hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-200"
           >
-            <h2 className="text-xl font-semibold mb-2">{p.name}</h2>
-
-            <p className="text-gray-500 mb-4">${p.price}</p>
-
-            <button
-              onClick={() => addToCart(p)}
-              className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
-            >
-              Add to Cart
-            </button>
+            <img src={product.image} alt={product.name} className="w-full mb-2 rounded" />
+            <h2 className="text-lg font-bold">{product.name}</h2>
+            <p className="text-gray-700 mb-2">PKR {product.price}</p>
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={() => removeFromCart(product.id)}
+                className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+              >
+                -
+              </button>
+              <span className="font-bold">{getQuantity(product.id)}</span>
+              <button
+                onClick={() => addToCart(product)}
+                className="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600"
+              >
+                +
+              </button>
+            </div>
           </div>
         ))}
       </div>
     </div>
   );
-}
+};
 
 export default Products;

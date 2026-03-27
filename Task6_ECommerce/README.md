@@ -1,42 +1,12 @@
 # Multi-Page E-commerce
 
-This project is a **React JS multi-page e-commerce application** with product listing and cart functionality.
+This project is a React JS multi-page e-commerce application with product listing and cart functionality.
+
+Live Demo: https://task6-e-commerce-website.vercel.app/
 
 ## Features
-
-* Home page
-* Products page with product cards
-* Cart with shared state
-* Checkout form
-* Routing between pages
-
-## Tech Stack
-
-* React JS
-* React Router
-* Vite
-* Tailwind CSS
-
-## Live Demo
-
-https://we-lab-task-6.vercel.app/
-
-## Run Locally
-
-Install dependencies:
-
-```
-npm install
-```
-
-Run development server:
-
-```
-npm run dev
-```
-
-Build for production:
-
-```
-npm run build
-```
+1. Home page
+2. Products page with product cards
+3. Cart with shared state
+4. Checkout form
+5. Routing between pages
